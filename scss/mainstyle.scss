@@ -1,0 +1,63 @@
+@import "mixins";
+@import "_null";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,900&display=swap");
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$mainFont: "Roboto";
+
+.container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+body {
+	background: #e5e5e5;
+}
+.wrapper {
+	overflow: hidden;
+	display: grid;
+	min-height: 100vh;
+	grid-template-rows: auto 1fr auto;
+}
+.header {
+	 padding: 0px 0px 0px 34px;
+	display: grid;
+	grid-template-columns: 120px 1fr 1fr;
+	.header-menu__icon {
+		display: none;
+	}
+	.logo {
+		display: flex;
+		align-items: center;
+	}
+
+	.header-menu {
+	}
+	.header-list {
+		display: flex;
+		align-items: center;
+		grid-column-gap: 24px;
+	}
+	.list-item {
+	}
+	.item-link {
+		font-family: $mainFont;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 80px;
+		color: #191919;
+	}
+	.item-link.actve {
+		color: #415aff;
+	}
+	.item-link:focus{
+		color: #415aff;
+	}
+}
