@@ -1,6 +1,6 @@
 $minWidth: 320px;
 $maxWidth: 1920;
-$maxWidthContainer: 1340;
+$maxWidthContainer: 1370;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
@@ -14,7 +14,7 @@ $mainFont: "Roboto";
 }
 
 .wrapper {
-	// overflow: hidden;
+	overflow: hidden;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
@@ -42,11 +42,11 @@ $mainFont: "Roboto";
 	margin-bottom: 8px;
 	display: grid;
 	grid-template-columns: 60% 40%;
-	@media (max-width:$md3+px){
+	@media (max-width: $md3+px) {
 		grid-template-columns: 1fr;
 		margin: 0 auto;
 	}
-	@media (min-width:$md3+px) and (max-width:$md2+px){
+	@media (min-width: $md3+px) and (max-width: $md2+px) {
 		grid-template-columns: 53% 47%;
 	}
 	input {
@@ -59,7 +59,7 @@ $mainFont: "Roboto";
 		padding-left: 20px;
 		border-radius: 100px 0px 0px 100px;
 		min-height: 78px;
-		@media (max-width:$md3+px){
+		@media (max-width: $md3+px) {
 			margin-bottom: 15px;
 			border-radius: 100px;
 			text-align: center;
@@ -78,13 +78,11 @@ $mainFont: "Roboto";
 	font-style: normal;
 	font-family: $mainFont;
 	font-weight: normal;
-	font-size: 13px;
 	line-height: 24px;
 	color: #8d9499;
-	@media (max-width:$md3+px){
+	@media (max-width: $md3+px) {
 		text-align: center;
 		margin: 0 auto;
-		
 	}
 }
 .banner-btns {
@@ -97,12 +95,35 @@ $mainFont: "Roboto";
 	line-height: 24px;
 	padding: 26px 28px;
 	color: #ffffff;
+	display: flex;
+	justify-content: space-between;
+	transition: all 1s;
+	@media (any-hover: hover) {
+		&:hover {
+			animation-name: arrow;
+			animation-timing-function: linear;
+			animation-duration: 1000ms;
+			animation-iteration-count: infinite;
+		}
+	}
+	@keyframes arrow {
+		0% {
+			justify-content: stretch;
+		}
+		50% {
+			
+		}
+		100% {
+			justify-content: space-between;
+		}
+	}
+	
 	._icon-arrow-right::before {
 		color: #fff;
-		@include adaptiv-value("margin-left", 20, 3, 1);
+		@include adaptiv-value("margin-left", 10, 3, 1);
 		vertical-align: middle;
 	}
-	@media (max-width:$md3+px){
+	@media (max-width: $md3+px) {
 		border-radius: 100px;
 		margin-bottom: 8px;
 	}
@@ -135,7 +156,7 @@ $mainFont: "Roboto";
 	letter-spacing: 2.25px;
 	color: #212529;
 }
-.box-btn{
+.box-btn {
 	font-family: $mainFont;
 	background: #f5ff93;
 	border-radius: 36px;
@@ -147,4 +168,25 @@ $mainFont: "Roboto";
 	padding: 27px 27px;
 	max-width: 274px;
 	width: 100%;
+	transition: all 0.5s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: #f5ff93;
+			background: #191919;
+			._icon-arrow-right::before {
+				color: #f5ff93;
+			}
+		}
+	}
+}
+
+.box-subtitle,
+.box-title,
+.box-text,
+.box-btn {
+	@media (max-width: $md3+px) {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
 }
