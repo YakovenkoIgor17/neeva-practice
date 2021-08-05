@@ -95,29 +95,29 @@ $mainFont: "Roboto";
 	line-height: 24px;
 	padding: 26px 28px;
 	color: #ffffff;
-	display: flex;
-	justify-content: space-between;
 	transition: all 1s;
 	@media (any-hover: hover) {
 		&:hover {
-			animation-name: arrow;
-			animation-timing-function: linear;
-			animation-duration: 1000ms;
-			animation-iteration-count: infinite;
+			._icon-arrow-right::before {
+				animation-name: arrow;
+				animation-timing-function: linear;
+				animation-duration: 1000ms;
+				animation-iteration-count: infinite;
+			}
 		}
 	}
 	@keyframes arrow {
 		0% {
-			justify-content: stretch;
+			margin-left: 20px;
 		}
 		50% {
-			
+			margin-left: 10px;
 		}
 		100% {
-			justify-content: space-between;
+			margin-left: 20px;
 		}
 	}
-	
+
 	._icon-arrow-right::before {
 		color: #fff;
 		@include adaptiv-value("margin-left", 10, 3, 1);
